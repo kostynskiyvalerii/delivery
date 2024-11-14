@@ -9,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:overlay_support/overlay_support.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -30,6 +31,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return BlocProvider(
       create: (_) => LoginBloc(),
       child: Scaffold(
@@ -40,16 +42,27 @@ class _LoginPageState extends State<LoginPage> {
                 child: BlocConsumer<LoginBloc, LoginState>(
               listener: (context, state) {
                 if (state is Success) {
-                  context.go('/scaning-page');
+                  if (state.driver == "driver_1") {
+                    context.go('/scaning-page');
+                  } else if (state.driver == "driver_2") {
+                    context.go('/farm-info-page');
+                  }
+                }
+                if (state is Login) {
+                  showSimpleNotification(
+                    Text('please login'),
+                    background: theme.colorScheme.onSurface,
+                  );
                 }
               },
               buildWhen: (previous, current) {
                 return current is Loading ||
                     current is Error ||
-                    current is Success;
+                    current is Success ||
+                    current is Login;
               },
               builder: (context, state) {
-                final isLoading = state is Loading;
+                bool isLoading = state is Loading;
                 final showWarning = state is Error;
 
                 return Column(
@@ -107,14 +120,6 @@ class _LoginPageState extends State<LoginPage> {
                         context.read<LoginBloc>().add(
                               LoginEvent.submit(carNumber, password),
                             );
-                      },
-                    ),
-                    const SizedBox(height: 32),
-                    CustomButton(
-                      label: '${context.localizations.enter} 2 водій',
-                      isLoading: isLoading,
-                      onPressed: () {
-                        context.go('/farm-info-page');
                       },
                     ),
                     if (showWarning) ...[

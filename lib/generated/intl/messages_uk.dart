@@ -22,13 +22,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(number) => "Дільниця № ${number}";
 
-  static String m1(number) => "Пташник № ${number}";
+  static String m1(number) => "Приміщення № ${number}";
 
   static String m2(number) => "Рейс № ${number}";
 
-  static String m3(number) => "Бункер № ${number} порожній";
+  static String m3(number) => "Склад № ${number} порожній";
 
-  static String m4(number) => "Бункер № ${number}";
+  static String m4(number) => "Склад № ${number}";
 
   static String m5(number) => "Завдання № ${number}";
 
@@ -60,10 +60,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Неправильний код"),
         "incorrectPassword": MessageLookupByLibrary.simpleMessage(
             "Пароль невірний. Зверніться до керівника"),
-        "kkzDelivery":
-            MessageLookupByLibrary.simpleMessage("Доставка комбікорму"),
+        "kkzDelivery": MessageLookupByLibrary.simpleMessage("Доставка товару"),
         "loadingPleaseWait":
             MessageLookupByLibrary.simpleMessage("Зачекайте, йде завантаження"),
+        "logout": MessageLookupByLibrary.simpleMessage("Вийти"),
         "next": MessageLookupByLibrary.simpleMessage("Далі"),
         "noFeed": MessageLookupByLibrary.simpleMessage("Нема корму"),
         "noServerResponse": MessageLookupByLibrary.simpleMessage(
@@ -72,7 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Номер телефону"),
         "pointCameraToBarcode": MessageLookupByLibrary.simpleMessage(
             "Наведіть камеру на штрих-код накладної"),
-        "poultryHouse": MessageLookupByLibrary.simpleMessage("Пташник"),
+        "poultryHouse": MessageLookupByLibrary.simpleMessage("Приміщення"),
         "poultryHouseNumber": m1,
         "pressButtonToScanTtn": MessageLookupByLibrary.simpleMessage(
             "Натисніть на кнопку, щоб почати сканування ТТН"),
@@ -82,10 +82,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectPoultryHouse":
             MessageLookupByLibrary.simpleMessage("Оберіть пташник"),
         "selectShipment": MessageLookupByLibrary.simpleMessage("Оберіть РЕЙС"),
-        "selectSilo": MessageLookupByLibrary.simpleMessage("Оберіть бункер"),
+        "selectSilo": MessageLookupByLibrary.simpleMessage("Оберіть склад"),
         "selectTask": MessageLookupByLibrary.simpleMessage("Оберіть завдання"),
         "shipmentNumber": m2,
-        "silo": MessageLookupByLibrary.simpleMessage("Бункер"),
+        "silo": MessageLookupByLibrary.simpleMessage("Склад"),
         "siloEmpty": m3,
         "siloNumber": m4,
         "start": MessageLookupByLibrary.simpleMessage("Старт"),

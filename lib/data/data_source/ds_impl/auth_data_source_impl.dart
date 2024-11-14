@@ -37,4 +37,17 @@ class AuthDataSourceImpl implements AuthDataSource {
       throw errorHandler.handle(e);
     }
   }
+
+  @override
+  Future<String?> authenticate({
+    required String carNumber,
+    required String password,
+  }) async {
+    return '';
+  }
+
+  @override
+  Future<bool> verifyToken(token) async {
+    return false;
+  }
 }

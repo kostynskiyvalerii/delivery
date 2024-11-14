@@ -46,5 +46,6 @@
   "confirmExecution": "Confirm execution",
   "siloEmpty": "silo № {number} is empty",
   "back": "Back",
-  "noFeed": "No feed"
+  "noFeed": "No feed",
+  "logout": "Logout"
 }

@@ -16,43 +16,43 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$LoginEvent {
-  String get carNumber => throw _privateConstructorUsedError;
-  String get password => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String carNumber, String password) submit,
+    required TResult Function() checkAuthentication,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String carNumber, String password)? submit,
+    TResult? Function()? checkAuthentication,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String carNumber, String password)? submit,
+    TResult Function()? checkAuthentication,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Submit value) submit,
+    required TResult Function(CheckAuthentication value) checkAuthentication,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Submit value)? submit,
+    TResult? Function(CheckAuthentication value)? checkAuthentication,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Submit value)? submit,
+    TResult Function(CheckAuthentication value)? checkAuthentication,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $LoginEventCopyWith<LoginEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -61,8 +61,6 @@ abstract class $LoginEventCopyWith<$Res> {
   factory $LoginEventCopyWith(
           LoginEvent value, $Res Function(LoginEvent) then) =
       _$LoginEventCopyWithImpl<$Res, LoginEvent>;
-  @useResult
-  $Res call({String carNumber, String password});
 }
 
 /// @nodoc
@@ -74,33 +72,13 @@ class _$LoginEventCopyWithImpl<$Res, $Val extends LoginEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? carNumber = null,
-    Object? password = null,
-  }) {
-    return _then(_value.copyWith(
-      carNumber: null == carNumber
-          ? _value.carNumber
-          : carNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$SubmitImplCopyWith<$Res>
-    implements $LoginEventCopyWith<$Res> {
+abstract class _$$SubmitImplCopyWith<$Res> {
   factory _$$SubmitImplCopyWith(
           _$SubmitImpl value, $Res Function(_$SubmitImpl) then) =
       __$$SubmitImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({String carNumber, String password});
 }
@@ -171,6 +149,7 @@ class _$SubmitImpl implements Submit {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String carNumber, String password) submit,
+    required TResult Function() checkAuthentication,
   }) {
     return submit(carNumber, password);
   }
@@ -179,6 +158,7 @@ class _$SubmitImpl implements Submit {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String carNumber, String password)? submit,
+    TResult? Function()? checkAuthentication,
   }) {
     return submit?.call(carNumber, password);
   }
@@ -187,6 +167,7 @@ class _$SubmitImpl implements Submit {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String carNumber, String password)? submit,
+    TResult Function()? checkAuthentication,
     required TResult orElse(),
   }) {
     if (submit != null) {
@@ -199,6 +180,7 @@ class _$SubmitImpl implements Submit {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Submit value) submit,
+    required TResult Function(CheckAuthentication value) checkAuthentication,
   }) {
     return submit(this);
   }
@@ -207,6 +189,7 @@ class _$SubmitImpl implements Submit {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Submit value)? submit,
+    TResult? Function(CheckAuthentication value)? checkAuthentication,
   }) {
     return submit?.call(this);
   }
@@ -215,6 +198,7 @@ class _$SubmitImpl implements Submit {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Submit value)? submit,
+    TResult Function(CheckAuthentication value)? checkAuthentication,
     required TResult orElse(),
   }) {
     if (submit != null) {
@@ -228,14 +212,114 @@ abstract class Submit implements LoginEvent {
   const factory Submit(final String carNumber, final String password) =
       _$SubmitImpl;
 
-  @override
   String get carNumber;
-  @override
   String get password;
-  @override
   @JsonKey(ignore: true)
   _$$SubmitImplCopyWith<_$SubmitImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CheckAuthenticationImplCopyWith<$Res> {
+  factory _$$CheckAuthenticationImplCopyWith(_$CheckAuthenticationImpl value,
+          $Res Function(_$CheckAuthenticationImpl) then) =
+      __$$CheckAuthenticationImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CheckAuthenticationImplCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res, _$CheckAuthenticationImpl>
+    implements _$$CheckAuthenticationImplCopyWith<$Res> {
+  __$$CheckAuthenticationImplCopyWithImpl(_$CheckAuthenticationImpl _value,
+      $Res Function(_$CheckAuthenticationImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CheckAuthenticationImpl implements CheckAuthentication {
+  const _$CheckAuthenticationImpl();
+
+  @override
+  String toString() {
+    return 'LoginEvent.checkAuthentication()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckAuthenticationImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String carNumber, String password) submit,
+    required TResult Function() checkAuthentication,
+  }) {
+    return checkAuthentication();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String carNumber, String password)? submit,
+    TResult? Function()? checkAuthentication,
+  }) {
+    return checkAuthentication?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String carNumber, String password)? submit,
+    TResult Function()? checkAuthentication,
+    required TResult orElse(),
+  }) {
+    if (checkAuthentication != null) {
+      return checkAuthentication();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Submit value) submit,
+    required TResult Function(CheckAuthentication value) checkAuthentication,
+  }) {
+    return checkAuthentication(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Submit value)? submit,
+    TResult? Function(CheckAuthentication value)? checkAuthentication,
+  }) {
+    return checkAuthentication?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Submit value)? submit,
+    TResult Function(CheckAuthentication value)? checkAuthentication,
+    required TResult orElse(),
+  }) {
+    if (checkAuthentication != null) {
+      return checkAuthentication(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckAuthentication implements LoginEvent {
+  const factory CheckAuthentication() = _$CheckAuthenticationImpl;
 }
 
 /// @nodoc
@@ -244,7 +328,8 @@ mixin _$LoginState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function() login,
+    required TResult Function(String driver) success,
     required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
@@ -252,7 +337,8 @@ mixin _$LoginState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
+    TResult? Function()? login,
+    TResult? Function(String driver)? success,
     TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -260,7 +346,8 @@ mixin _$LoginState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function()? login,
+    TResult Function(String driver)? success,
     TResult Function()? error,
     required TResult orElse(),
   }) =>
@@ -269,6 +356,7 @@ mixin _$LoginState {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(Login value) login,
     required TResult Function(Success value) success,
     required TResult Function(Error value) error,
   }) =>
@@ -277,6 +365,7 @@ mixin _$LoginState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
+    TResult? Function(Login value)? login,
     TResult? Function(Success value)? success,
     TResult? Function(Error value)? error,
   }) =>
@@ -285,6 +374,7 @@ mixin _$LoginState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(Login value)? login,
     TResult Function(Success value)? success,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -350,7 +440,8 @@ class _$InitialImpl implements Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function() login,
+    required TResult Function(String driver) success,
     required TResult Function() error,
   }) {
     return initial();
@@ -361,7 +452,8 @@ class _$InitialImpl implements Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
+    TResult? Function()? login,
+    TResult? Function(String driver)? success,
     TResult? Function()? error,
   }) {
     return initial?.call();
@@ -372,7 +464,8 @@ class _$InitialImpl implements Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function()? login,
+    TResult Function(String driver)? success,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -387,6 +480,7 @@ class _$InitialImpl implements Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(Login value) login,
     required TResult Function(Success value) success,
     required TResult Function(Error value) error,
   }) {
@@ -398,6 +492,7 @@ class _$InitialImpl implements Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
+    TResult? Function(Login value)? login,
     TResult? Function(Success value)? success,
     TResult? Function(Error value)? error,
   }) {
@@ -409,6 +504,7 @@ class _$InitialImpl implements Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(Login value)? login,
     TResult Function(Success value)? success,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -464,7 +560,8 @@ class _$LoadingImpl implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function() login,
+    required TResult Function(String driver) success,
     required TResult Function() error,
   }) {
     return loading();
@@ -475,7 +572,8 @@ class _$LoadingImpl implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
+    TResult? Function()? login,
+    TResult? Function(String driver)? success,
     TResult? Function()? error,
   }) {
     return loading?.call();
@@ -486,7 +584,8 @@ class _$LoadingImpl implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function()? login,
+    TResult Function(String driver)? success,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -501,6 +600,7 @@ class _$LoadingImpl implements Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(Login value) login,
     required TResult Function(Success value) success,
     required TResult Function(Error value) error,
   }) {
@@ -512,6 +612,7 @@ class _$LoadingImpl implements Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
+    TResult? Function(Login value)? login,
     TResult? Function(Success value)? success,
     TResult? Function(Error value)? error,
   }) {
@@ -523,6 +624,7 @@ class _$LoadingImpl implements Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(Login value)? login,
     TResult Function(Success value)? success,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -539,35 +641,35 @@ abstract class Loading implements LoginState {
 }
 
 /// @nodoc
-abstract class _$$SuccessImplCopyWith<$Res> {
-  factory _$$SuccessImplCopyWith(
-          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
-      __$$SuccessImplCopyWithImpl<$Res>;
+abstract class _$$LoginImplCopyWith<$Res> {
+  factory _$$LoginImplCopyWith(
+          _$LoginImpl value, $Res Function(_$LoginImpl) then) =
+      __$$LoginImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$SuccessImpl>
-    implements _$$SuccessImplCopyWith<$Res> {
-  __$$SuccessImplCopyWithImpl(
-      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
+class __$$LoginImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$LoginImpl>
+    implements _$$LoginImplCopyWith<$Res> {
+  __$$LoginImplCopyWithImpl(
+      _$LoginImpl _value, $Res Function(_$LoginImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SuccessImpl implements Success {
-  const _$SuccessImpl();
+class _$LoginImpl implements Login {
+  const _$LoginImpl();
 
   @override
   String toString() {
-    return 'LoginState.success()';
+    return 'LoginState.login()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SuccessImpl);
+        (other.runtimeType == runtimeType && other is _$LoginImpl);
   }
 
   @override
@@ -578,10 +680,11 @@ class _$SuccessImpl implements Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function() login,
+    required TResult Function(String driver) success,
     required TResult Function() error,
   }) {
-    return success();
+    return login();
   }
 
   @override
@@ -589,10 +692,11 @@ class _$SuccessImpl implements Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
+    TResult? Function()? login,
+    TResult? Function(String driver)? success,
     TResult? Function()? error,
   }) {
-    return success?.call();
+    return login?.call();
   }
 
   @override
@@ -600,12 +704,13 @@ class _$SuccessImpl implements Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function()? login,
+    TResult Function(String driver)? success,
     TResult Function()? error,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success();
+    if (login != null) {
+      return login();
     }
     return orElse();
   }
@@ -615,6 +720,153 @@ class _$SuccessImpl implements Success {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(Login value) login,
+    required TResult Function(Success value) success,
+    required TResult Function(Error value) error,
+  }) {
+    return login(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Login value)? login,
+    TResult? Function(Success value)? success,
+    TResult? Function(Error value)? error,
+  }) {
+    return login?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Login value)? login,
+    TResult Function(Success value)? success,
+    TResult Function(Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (login != null) {
+      return login(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Login implements LoginState {
+  const factory Login() = _$LoginImpl;
+}
+
+/// @nodoc
+abstract class _$$SuccessImplCopyWith<$Res> {
+  factory _$$SuccessImplCopyWith(
+          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
+      __$$SuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String driver});
+}
+
+/// @nodoc
+class __$$SuccessImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$SuccessImpl>
+    implements _$$SuccessImplCopyWith<$Res> {
+  __$$SuccessImplCopyWithImpl(
+      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? driver = null,
+  }) {
+    return _then(_$SuccessImpl(
+      null == driver
+          ? _value.driver
+          : driver // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessImpl implements Success {
+  const _$SuccessImpl(this.driver);
+
+  @override
+  final String driver;
+
+  @override
+  String toString() {
+    return 'LoginState.success(driver: $driver)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessImpl &&
+            (identical(other.driver, driver) || other.driver == driver));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, driver);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
+      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() login,
+    required TResult Function(String driver) success,
+    required TResult Function() error,
+  }) {
+    return success(driver);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? login,
+    TResult? Function(String driver)? success,
+    TResult? Function()? error,
+  }) {
+    return success?.call(driver);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? login,
+    TResult Function(String driver)? success,
+    TResult Function()? error,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(driver);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(Login value) login,
     required TResult Function(Success value) success,
     required TResult Function(Error value) error,
   }) {
@@ -626,6 +878,7 @@ class _$SuccessImpl implements Success {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
+    TResult? Function(Login value)? login,
     TResult? Function(Success value)? success,
     TResult? Function(Error value)? error,
   }) {
@@ -637,6 +890,7 @@ class _$SuccessImpl implements Success {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(Login value)? login,
     TResult Function(Success value)? success,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -649,7 +903,12 @@ class _$SuccessImpl implements Success {
 }
 
 abstract class Success implements LoginState {
-  const factory Success() = _$SuccessImpl;
+  const factory Success(final String driver) = _$SuccessImpl;
+
+  String get driver;
+  @JsonKey(ignore: true)
+  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -692,7 +951,8 @@ class _$ErrorImpl implements Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function() login,
+    required TResult Function(String driver) success,
     required TResult Function() error,
   }) {
     return error();
@@ -703,7 +963,8 @@ class _$ErrorImpl implements Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
+    TResult? Function()? login,
+    TResult? Function(String driver)? success,
     TResult? Function()? error,
   }) {
     return error?.call();
@@ -714,7 +975,8 @@ class _$ErrorImpl implements Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function()? login,
+    TResult Function(String driver)? success,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -729,6 +991,7 @@ class _$ErrorImpl implements Error {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(Login value) login,
     required TResult Function(Success value) success,
     required TResult Function(Error value) error,
   }) {
@@ -740,6 +1003,7 @@ class _$ErrorImpl implements Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
+    TResult? Function(Login value)? login,
     TResult? Function(Success value)? success,
     TResult? Function(Error value)? error,
   }) {
@@ -751,6 +1015,7 @@ class _$ErrorImpl implements Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(Login value)? login,
     TResult Function(Success value)? success,
     TResult Function(Error value)? error,
     required TResult orElse(),

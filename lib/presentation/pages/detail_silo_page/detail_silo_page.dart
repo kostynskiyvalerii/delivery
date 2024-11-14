@@ -121,6 +121,7 @@ class DetailSiloPage extends StatelessWidget {
                           Text(
                             context.localizations.ttnNumber('123123123123123'),
                             style: theme.textTheme.labelMedium,
+                            textAlign: TextAlign.center,
                           ),
                           const SizedBox(height: 12),
                           Text(
@@ -136,7 +137,7 @@ class DetailSiloPage extends StatelessWidget {
                               Text(
                                 '${item.index} ',
                                 style: theme.textTheme.labelLarge!.copyWith(
-                                    fontSize: 60,
+                                    fontSize: 40,
                                     color: item.isEmpty
                                         ? theme.colorScheme.onPrimary
                                         : null),
@@ -144,7 +145,7 @@ class DetailSiloPage extends StatelessWidget {
                               Text(
                                 context.localizations.silo,
                                 style: theme.textTheme.labelLarge!.copyWith(
-                                    fontSize: 60,
+                                    fontSize: 40,
                                     color: item.isEmpty
                                         ? theme.colorScheme.onPrimary
                                         : null),

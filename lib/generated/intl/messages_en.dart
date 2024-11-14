@@ -63,6 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "kkzDelivery": MessageLookupByLibrary.simpleMessage("KKZ Delivery"),
         "loadingPleaseWait":
             MessageLookupByLibrary.simpleMessage("Please wait, loading"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "noFeed": MessageLookupByLibrary.simpleMessage("No feed"),
         "noServerResponse":

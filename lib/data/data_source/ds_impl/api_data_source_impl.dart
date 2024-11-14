@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:feed_delivery/data/data_source/api_data_source.dart';
-import 'package:feed_delivery/data/data_source/api_interceptor.dart';
 import 'package:feed_delivery/data/data_source/auth_data_source.dart';
 import 'package:feed_delivery/presentation/utility/error_handler/error_handler.dart';
 import 'package:flutter/foundation.dart';
@@ -16,10 +15,10 @@ class ApiDataSourceImpl implements ApiDataSource {
     required this.authDataSource,
     required String api,
   }) {
-    dio.interceptors.add(AuthInterceptor(authDataSource, dio, api));
-    dio.options
-      ..baseUrl = api
-      ..headers['Content-Type'] = 'application/json';
+    // dio.interceptors.add(AuthInterceptor(authDataSource, dio, api));
+    // dio.options
+    //   ..baseUrl = api
+    //   ..headers['Content-Type'] = 'application/json';
   }
 
   Future<Response> _makeRequest(

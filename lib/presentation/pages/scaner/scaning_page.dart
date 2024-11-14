@@ -76,6 +76,12 @@ class ScaningPage extends StatelessWidget {
                     onPressed: () => context.go('/list-silo-page'),
                     height: 30,
                   ),
+                  const SizedBox(height: 32),
+                  CustomButton(
+                    label: context.localizations.logout,
+                    onPressed: () => context.go('/login'),
+                    height: 30,
+                  ),
                 ],
               );
             },
